@@ -1,2 +1,3 @@
 # weewx-luxtronik
-Augment station data with data from Luxtronik heatpump controller
+
+This is a service for WeeWX that collects data from Luxtronik heatpump controllers.
