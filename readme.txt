@@ -20,10 +20,9 @@ cp luxtronik.py /home/weewx/bin/user
 
 2) in the WeeWX configuration file, add a new [ProcessMonitor] stanza
 
-[ProcessMonitor]
-    data_binding = pmon_binding
-    process = weewxd
-
+[Luxtronik]
+    host = 192.168.201.40
+    port = 8889
 
 3) in the WeeWX configuration file, add the luxtronik service
 
