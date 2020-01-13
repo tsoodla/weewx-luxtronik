@@ -44,18 +44,21 @@ class Luxtronik(StdService):
     def __init__(self, engine, config_dict):
 
         super(Luxtronik, self).__init__(engine, config_dict)
-        self.bind(weewx.NEW_ARCHIVE_RECORD, self.new_archive_record)
-      
-        self.host = '192.168.201.40'
-        self.port = 8889
 
         self.last_total_energy = None
+      
+        try:
+            self.host = config_dict['Luxtronik'].get('host')
+            self.port = config_dict['Luxtronik'].get('port')
+
+            self.bind(weewx.NEW_ARCHIVE_RECORD, self.new_archive_record)
+        except KeyError as e:
+            logerr("Missing parameter {}".format(e))
 
     def connect(self):
         try:
             self.hp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.hp.settimeout(2)
-
             self.hp.connect((self.host, self.port))
         except socket.error as e:
             logerr("Error: connection failed {}".format(e))
