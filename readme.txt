@@ -18,7 +18,7 @@ Manual installation instructions
 
 cp luxtronik.py /home/weewx/bin/user
 
-2) in the WeeWX configuration file, add a new [ProcessMonitor] stanza
+2) in the WeeWX configuration file, add a new [Luxtronik] stanza
 
 [Luxtronik]
     host = 192.168.201.40
