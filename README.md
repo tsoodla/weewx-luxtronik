@@ -2,5 +2,5 @@
 
 This is a service for [WeeWX](http://weewx.com/) that collects data from Luxtronik heatpump controllers.
 
-Available variables: https://github.com/Bouni/luxtronik/blob/master/luxtronik/calculations.py
+Available variables: https://www.loxwiki.eu/display/LOX/Java+Webinterface
 
