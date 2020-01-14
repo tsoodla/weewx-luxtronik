@@ -90,6 +90,8 @@ class Luxtronik(StdService):
 
         net_energy_consumed = None
 
+        # Available variables: https://www.loxwiki.eu/display/LOX/Java+Webinterface
+
         energy_heating   = float(self.calculated[151]) / 10
         energy_hot_water = float(self.calculated[152]) / 10
 
