@@ -28,7 +28,7 @@ except ImportError:
     import syslog
 
     def logmsg(level, msg):
-        syslog.syslog(level, 'Luxtronik: %s:' % msg)
+        syslog.syslog(level, 'luxtronik: %s:' % msg)
 
     def logdbg(msg):
         logmsg(syslog.LOG_DEBUG, msg)
@@ -40,18 +40,19 @@ except ImportError:
         logmsg(syslog.LOG_ERR, msg)
 
 class Luxtronik(StdService):
-
     def __init__(self, engine, config_dict):
 
         super(Luxtronik, self).__init__(engine, config_dict)
+        self.bind(weewx.NEW_ARCHIVE_RECORD, self.new_archive_record)
 
         self.last_total_energy = None
-      
+
         try:
             self.host = config_dict['Luxtronik'].get('host')
             self.port = config_dict['Luxtronik'].get('port')
 
-            self.bind(weewx.NEW_ARCHIVE_RECORD, self.new_archive_record)
+            loginf("host %s:%s" % self.host, self.port)
+
         except KeyError as e:
             logerr("Missing parameter {}".format(e))
 
@@ -59,11 +60,10 @@ class Luxtronik(StdService):
         try:
             self.hp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.hp.settimeout(2)
-            self.hp.connect((self.host, self.port))
+            self.hp.connect((self.host, int(self.port)))
         except socket.error as e:
             logerr("Error: connection failed {}".format(e))
             self.hp.close()
-            sys.exit(1)
 
     def get_calculated(self):
         self.calculated = []
@@ -91,7 +91,6 @@ class Luxtronik(StdService):
         net_energy_consumed = None
 
         # Available variables: https://www.loxwiki.eu/display/LOX/Java+Webinterface
-
         energy_heating   = float(self.calculated[151]) / 10
         energy_hot_water = float(self.calculated[152]) / 10
 
