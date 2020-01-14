@@ -52,8 +52,7 @@ class Luxtronik(StdService):
             self.host = config_dict['Luxtronik'].get('host')
             self.port = config_dict['Luxtronik'].get('port')
 
-            logdbg("host %s" % self.host)
-            logdbg("port %s" % self.port)
+            logdbg("host %s:%s" % self.host, self.port)
 
         except KeyError as e:
             logerr("Missing parameter {}".format(e))
@@ -93,7 +92,6 @@ class Luxtronik(StdService):
         net_energy_consumed = None
 
         # Available variables: https://www.loxwiki.eu/display/LOX/Java+Webinterface
-
         energy_heating   = float(self.calculated[151]) / 10
         energy_hot_water = float(self.calculated[152]) / 10
 
