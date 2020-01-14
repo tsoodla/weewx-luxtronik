@@ -41,7 +41,6 @@ except ImportError:
 
 class Luxtronik(StdService):
     def __init__(self, engine, config_dict):
-
         super(Luxtronik, self).__init__(engine, config_dict)
         self.bind(weewx.NEW_ARCHIVE_RECORD, self.new_archive_record)
 
