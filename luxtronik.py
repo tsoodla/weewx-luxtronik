@@ -95,6 +95,8 @@ class Luxtronik(StdService):
 
         total_energy = energy_heating + energy_hot_water
 
+        logdbg("total_energy %s" % total_energy)
+
         if self.last_total_energy:
             net_energy_consumed = total_energy - self.last_total_energy
             event.record['soilTemp3'] = net_energy_consumed
