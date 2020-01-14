@@ -18,6 +18,9 @@ class LuxtronikInstaller(ExtensionInstaller):
             config={
                 'Luxtronik': {
                     'host': '192.168.201.40',
-                    'port': '8889'}},
+                    'port': '8889'
+                }
+            },
             files=[('bin/user', ['bin/user/luxtronik.py'])]
         )
+
