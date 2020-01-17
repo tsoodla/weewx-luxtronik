@@ -6,7 +6,9 @@ Installation instructions
 
 wee_extension --install=weewx-luxtronik
 
-2) restart WeeWX
+2) put correct ip address to WeeWX configuration file [Luxtronik] host section
+
+3) restart WeeWX
 
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
@@ -21,7 +23,7 @@ cp luxtronik.py /home/weewx/bin/user
 2) in the WeeWX configuration file, add a new [Luxtronik] stanza
 
 [Luxtronik]
-    host = 192.168.201.40
+    host = REPLACE_ME_WITH_CORRECT_IP_ADDRESS
     port = 8889
 
 3) in the WeeWX configuration file, add the luxtronik service

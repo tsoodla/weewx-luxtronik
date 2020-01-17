@@ -50,7 +50,7 @@ class Luxtronik(StdService):
             self.host = config_dict['Luxtronik'].get('host')
             self.port = config_dict['Luxtronik'].get('port')
 
-            loginf("host %s:%s" % self.host, self.port)
+            loginf("heatpump %s:%s" % self.host, self.port)
 
         except KeyError as e:
             logerr("Missing parameter {}".format(e))

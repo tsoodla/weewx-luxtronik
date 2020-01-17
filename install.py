@@ -17,7 +17,7 @@ class LuxtronikInstaller(ExtensionInstaller):
             process_services='user.luxtronik.Luxtronik',
             config={
                 'Luxtronik': {
-                    'host': '192.168.201.40',
+                    'host': 'REPLACE_ME_WITH_CORRECT_IP_ADDRESS',
                     'port': '8889'
                 }
             },
