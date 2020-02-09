@@ -6,7 +6,7 @@ Installation instructions
 
 wee_extension --install=weewx-luxtronik
 
-2) put correct ip address to WeeWX configuration file [Luxtronik] host section
+2) put correct IP address to WeeWX configuration file [Luxtronik] host section
 
 3) restart WeeWX
 
