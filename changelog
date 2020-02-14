@@ -1,2 +1,5 @@
 0.1 11 jan 2020
 * initial public release
+
+0.2 13 feb 2020
+* sockets error handling

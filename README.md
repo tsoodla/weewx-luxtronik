@@ -15,8 +15,8 @@ wee_extension --install=weewx-luxtronik
 3) restart WeeWX
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
 
 
@@ -47,6 +47,8 @@ cp luxtronik.py /home/weewx/bin/user
 4) restart WeeWX
 
 ```
-sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx start
+sudo systemctl stop weewx
+sudo systemctl start weewx
 ```
+
+Available variables to monitor: https://www.loxwiki.eu/display/LOX/Java+Webinterface

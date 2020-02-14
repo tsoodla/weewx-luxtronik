@@ -9,7 +9,7 @@ def loader():
 class LuxtronikInstaller(ExtensionInstaller):
     def __init__(self):
         super(LuxtronikInstaller, self).__init__(
-            version="0.1",
+            version="0.2",
             name='luxtronik',
             description='Augment station data with data from Luxtronik heatpump controller.',
             author="Tarmo Soodla",
