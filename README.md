@@ -7,7 +7,7 @@ This is a service for [WeeWX](http://weewx.com/) that collects data from Luxtron
 1) install the extension
 
 ```
-wee_extension --install=weewx-luxtronik
+sudo wee_extension --install=weewx-luxtronik.tar.gz
 ```
 
 2) put correct IP address to WeeWX configuration file [Luxtronik] host section
