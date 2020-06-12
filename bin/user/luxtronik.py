@@ -9,6 +9,8 @@ import weewx.units
 from weeutil.weeutil import to_int
 weewx.units.obs_group_dict['soilTemp3'] = 'group_energy'
 
+VERSION = "0.2"
+
 try:
     # Test for new-style weewx logging by trying to import weeutil.logger
     import weeutil.logger
@@ -43,6 +45,8 @@ except ImportError:
 class Luxtronik(StdService):
     def __init__(self, engine, config_dict):
         super(Luxtronik, self).__init__(engine, config_dict)
+        loginf("service version is %s" % VERSION)
+
         self.bind(weewx.NEW_ARCHIVE_RECORD, self.new_archive_record)
 
         self.last_total_energy = None
